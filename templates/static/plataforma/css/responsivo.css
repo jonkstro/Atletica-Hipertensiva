@@ -12,15 +12,6 @@
 	    text-align: left;
 	}
 
-	.sidebar{
-	    height: 10vh;
-	    width: 100%;
-	    background-color: rgb(12, 21, 118);
-	    margin: 0;
-	    padding: 0;
-	    top: 0;
-	}
-
 	.logo{
 		width: 100%;
 		margin-top: 0;
@@ -35,10 +26,11 @@
 	}
 
 	.conteudo{
+		padding: 5px;
 	    margin-left: 0;
-	    margin-bottom: 100px;
 	    margin-top: 0px;
 	    width: 100%;
+		font-size: 1rem;
 	}
 
 	.area-cadastrar{
@@ -112,5 +104,43 @@
 	    transition: 0.5s ease-in-out;
 	}
 
+	.card-lateral{
+		text-decoration: none;
+		justify-content: center;
+		align-items: center;
+		width: 10rem;
+		background-color: rgb(12, 21, 118);
+		margin: 1rem auto;
+		padding: 10px;
+		color: white;
+		font-weight: bold;
+		text-decoration: none;
+		text-align: center;
+		box-shadow: 5px 5px 5px gray;
+		font-size: 1rem;
+		display: flex;
+		flex-direction: row;
+	}
 
+	.card-lateral img {
+		width: 25px;
+		height: 25px;
+	}
+
+
+	.sidebar{
+	    width: 100%;
+	    background-color: white;
+	    margin-top: 12rem;
+	}
+
+	nav img {
+		padding-left: 1rem;
+	}
+
+	.sair-btn {
+		width: 100%;
+		right: 0rem;
+		top: 90%;
+	}
 }

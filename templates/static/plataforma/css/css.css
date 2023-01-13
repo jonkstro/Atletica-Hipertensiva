@@ -6,46 +6,46 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
+    height: 100vh;
 }
 
+nav {
+    background-color: rgb(12, 21, 118);
+}
+nav img {
+    padding-left: 20rem;
+}
+
+
 .sidebar{
-    height: 100vh;
+    height: 100%;
     width: 250px;
     position: fixed;
     background-color: rgb(12, 21, 118);
-    margin: 0;
+    /*margin-top: 50px;*/
     padding: 0;
     top: 0;
+
 }
 
-.logo{
-    margin-top: 50%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.sidebar a{
+    text-decoration: none;
 }
 
-.logo img{
-    max-width: 220px;
+nav img{
+    max-height: 50px;
+}
+
+.navbar-brand {
+    text-align: left;
 }
 
 .conteudo{
-    margin-left: 250px;
+    margin-left: 275px;
     margin-bottom: 0px;
     margin-top: 0px;
     width: 70%;
 }
-
-.area-cadastrar{
-    margin-top: 5px;
-    margin-left: 150px;
-}
-
-.area-logar{
-    margin-top: 8%;
-    margin-left: 150px;
-}
-
 
 .titulo{
     font-size: 32px;
@@ -60,32 +60,11 @@ body {
     font-weight: bold;
     font-size: 32px;
 }
-
-.input-form{
-    margin-top: 15px;
-    width: 100%;
-    padding: 5px;
-    outline: 0;
-}
-.input-form:focus{
-    border: 2px solid rgb(12, 21, 118) !important;
-    outline: 0 !important;
-    box-shadow: none !important;
-}
-
 .bold{
     font-weight: bold;
 }
 
-.btn{
-    height: 50px;
-    text-decoration: none;
-    margin-top: 20px;
-    border-width: 1px;
-    border-radius: 5px;
-    padding: 0px 15px 0px 15px;
-    font-size: 25px;
-}
+
 
 .row{
     justify-content: space-around;
@@ -101,4 +80,40 @@ body {
 
 .btn:hover {
     transition: 0.5s ease-in-out;
+}
+
+.card-lateral{
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    background-color: rgb(12, 21, 118);
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 5px 5px 5px gray;
+    font-size: 1.5rem;
+}
+
+.dados{
+    font-weight: bold;
+} 
+
+.sair-btn {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    margin: 0;
+    width: 15%;
+    text-align: center;  
+}
+
+.sair-btn a {
+    padding: auto;
+    font-size: 1rem;
+    height: 2rem;
 }

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'plataforma/css/css.css' %}">
+<link rel="stylesheet" href="{% static 'plataforma/css/responsivo.css' %}">
+{% endblock %}
+
+{% block 'titulo' %}Atlética Hipertensiva{% endblock %}
+
+{% block 'body' %}
+
+
+	<!-- sidebar -->
+	<div class="sidebar">
+		<a href="">	
+	        <div  class="card-lateral">
+	            <img src="{% static 'plataforma/img/dados-projeto.png' %}">
+	                    <br>
+	                    <br>
+	                    <p>Gerar Relatórios</p>
+	        </div>
+		</a>
+		<a href="">	
+	        <div class="card-lateral">
+	            <img src="{% static 'plataforma/img/dispositivos.png' %}">
+	                    <br>
+	                    <br>
+	                    <p>Gerenciar Associados</p>
+	        </div>
+		</a>
+		{% comment %} <a href="">	 {% endcomment %}
+	        <div  class="card-lateral">
+	            <img src="{% static 'plataforma/img/dados-usuario.png' %}">
+	                    <br>
+	                    <br>
+	                    <p>Adicionar Associado</p>
+	        </div>
+		</a>
+    </div>
+
+    <div class="conteudo">
+    	<h1 class="titulo">Selecione o que deseja:</h1>
+    	
+    </div>
+      
+	<div class="sair-btn">
+		<a style="width: 80%;" href="{% url 'sair' %}" class="btn btn-danger navbar-brand">SAIR</a>
+	</div>
+
+{% endblock %}
+
+
+

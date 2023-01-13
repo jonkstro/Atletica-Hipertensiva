@@ -1,0 +1,28 @@
+body {
+	background-image: url('../img/bg.jpg');
+}
+
+.conteudo {
+	text-align: center;
+	justify-content: justify;
+	width: 80%;
+	padding: 20px;
+	background-color: rgba(250, 250, 250, .8);
+}
+
+.btn {
+	height: 30px;
+	font-size: 20px;
+}
+
+.img_inicial img{
+	max-width: 50%;
+	padding: 5px;
+}
+
+.img_inicial {
+	display: inline-flex;
+	margin: 10px;
+	text-align: center;
+	width: 100%;
+}
