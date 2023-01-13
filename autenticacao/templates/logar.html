@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'autenticacao/css/css.css' %}">
+<link rel="stylesheet" href="{% static 'autenticacao/css/responsivo.css' %}">
+{% endblock %}
+{% block 'titulo' %}Entrar{% endblock %}
+{% block 'body' %}
+
+
+
+    <div class="sidebar">
+        <div  class="logo">
+            <img src="{% static 'autenticacao/img/logo.png' %}">
+            <h2 class="texto-logo">ATLÉTICA HIPERTENSIVA</h2>
+        </div>
+    </div>
+
+    <div class="conteudo">
+
+        <div class="area-logar" style="width: 100%; margin: 5rem auto; padding: 25px 10%;">
+        {% if messages %}
+        <br>
+            {% for message in messages %}
+            <div class="alert {{message.tags}}">
+            {{message}}
+            </div>
+            {% endfor %}
+        {% endif %}
+           <h2 class="titulo">Seja bem vindo!</h2>
+              <p class="sub-titulo">Faça login com a sua conta.</p>
+              <hr>
+            <form action="{% url 'logar' %}" method="POST">{% csrf_token %}
+                <span class="bold">
+                    Nome de usuário
+                </span>
+                <input class="form-control input-form" type="text" name="usuario" placeholder="Digite seu nome de usuário...">
+                <br>
+                <span class="bold">
+                    Senha
+                </span>
+                <input class="form-control input-form" type="password" name="senha" placeholder="Digite sua senha...">
+                <br>
+                <div style="padding: 10px;" class="row">
+                    <button style="width: 100%; height: 3rem; padding-top: 0;" class="btn btn-info text-white">Logar</button>
+                    
+                    <!-- <p class="bold" style="margin-top: 2rem;">
+                        Não tem uma conta ? 
+                        <a href="" style="padding-top: 0;" class="btn btn-outline-info">Registre-se</a>
+                    </p> -->
+                </div>
+                <hr>
+                <p>
+                    <a class='sub-titulo' href="{% url 'forgot' %}">Esqueceu sua senha?</a>
+                </p>
+            </form>
+            <br> 
+            
+        </div>
+      
+
+
+
+{% endblock %}
+
+
+

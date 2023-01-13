@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'head' %}
+    <link rel="stylesheet" href="{% static 'autenticacao/css/css.css' %}">
+    <link rel="stylesheet" href="{% static 'autenticacao/css/responsivo.css' %}">
+{% endblock %}
+
+{% block 'titulo' %}Esqueceu sua senha{% endblock %}
+
+{% block 'body' %}
+
+<div class="sidebar">
+    <div  class="logo">
+        <img src="{% static 'autenticacao/img/logo.png' %}">
+        <h2 class="texto-logo">ATLÉTICA HIPERTENSIVA</h2>
+    </div>
+</div>
+
+<div style="
+        border-style: solid;
+        margin-top: 5rem; 
+        margin-left: 0 auto; 
+        width: auto; 
+        border-width: 0px; 
+        " 
+    class="conteudo">
+    {% if messages %}
+        <br>
+        {% for message in messages %}
+        <div style="text-align: center" class="alert {{message.tags}}">
+        {{message}}
+        </div>
+        {% endfor %}
+    {% endif %}
+    <div class="area-cadastrar" style="width: 100%; margin: 0 auto; text-align: center; padding: 25px 10%;">
+    
+        <h2 style="" class="titulo">Preencha os campos abaixo</h2>
+            <p></p>
+            <hr>
+        <form action="{% url 'alterar_senha' token %}" method="POST">{% csrf_token %}
+            <span style="margin-top: 1rem; text-align: left;" class="bold">
+                Senha
+            </span>
+            <input style="width: 100%; padding: 1rem; height: 3rem;" class="form-control input-form" type="password" name="senha" placeholder="Digite sua senha...">
+            <span style="margin-top: 1rem; text-align: left;" class="bold">
+                Repita sua senha
+            </span style="margin-top: 1rem; text-align: left;">
+            <input style="width: 100%; padding: 1rem; height: 3rem;" class="form-control input-form" type="password" name="confirmar_senha" placeholder="Digite novamente a sua senha...">
+            <br>
+            <button style="width: 100%; padding: 0; height: 3rem;" class="btn btn-info text-white">Alterar senha</button>
+            <hr style="margin-top: 3rem;">
+            <p style="text-align: left;">
+                <a class='sub-titulo' href="{% url 'logar' %}">Retornar para tela de login</a>
+            </p>
+        </form>
+        <br> 
+        
+    </div>
+</div>   
+{% endblock %}
+
