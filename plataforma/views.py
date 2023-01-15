@@ -28,12 +28,12 @@ def add_associado(request):
         email = request.POST.get('email')
         cpf = request.POST.get('cpf')
         matricula = request.POST.get('matricula')
-        associacao = request.POST.get('associacao')
-        data_nasc = request.POST.get('data_nasc')
-        data_exped = request.POST.get('data_exped')
-        data_valid = request.POST.get('data_valid')
+        foto = request.POST.get('foto')
+        data_nasc = request.POST.get('data-nasc')
+        data_exped = request.POST.get('data-exped')
+        data_valid = request.POST.get('data-valid')
 
-        if (len(nome.strip()) == 0) or (len(email.strip()) == 0) or (len(cpf.strip()) == 0) or (len(matricula.strip()) == 0) or (len(associacao.strip()) == 0) or (len(data_nasc.strip()) == 0) or (len(data_exped.strip()) == 0) or (len(data_valid.strip()) == 0):
+        if (len(nome.strip()) == 0) or (len(email.strip()) == 0) or (len(cpf.strip()) == 0) or (len(matricula.strip()) == 0) or (len(data_nasc.strip()) == 0) or (len(data_exped.strip()) == 0) or (len(data_valid.strip()) == 0):
             messages.add_message(request, constants.ERROR, 'Preencha todos os campos')
             return redirect('/add-associado/')
         associado = Carteira.objects.filter(matricula=matricula)
@@ -47,7 +47,7 @@ def add_associado(request):
             email = email,
             cpf = cpf,
             matricula = matricula,
-            associacao = associacao,
+            foto = foto,
             data_nasc = data_nasc,
             data_exped = data_exped,
             data_valid = data_valid

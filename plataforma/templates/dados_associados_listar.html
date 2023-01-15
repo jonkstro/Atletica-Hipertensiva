@@ -10,7 +10,13 @@
 {% block 'titulo' %}Atlética Hipertensiva{% endblock %}
 
 {% block 'body' %}
-
+	{% if messages %}
+		{% for message in messages %}
+		<div class="alert {{message.tags}}">
+		{{message}}
+		</div>
+		{% endfor %}
+	{% endif %}
 
 	<!-- sidebar -->
 	<div class="sidebar">
@@ -43,17 +49,12 @@
     	
         <h1 style="text-align: center"  class="titulo">Escolha o Associado: </h1>
         <div class="row">
-			{% if carteiras %}
-				{% for carteira in carteiras%}
+			{% for carteira in carteiras%}
 				<div class="col-md-4">
-					<a href="{% url 'dados_paciente' paciente.id %}" class="link-hover">
+					<a href="" class="link-hover">
 						<div class="card-paciente">
 							<div class="foto-perfil">
-								{% if carteira.sexo == "M"%}
-									<img src="{% static 'plataforma/img/perfil2.png' %}">
-									{% else %}
-									<img src="{% static 'plataforma/img/perfil1.png' %}">
-								{% endif %}
+								<img src="{{carteira.foto}}">
 							</div>
 							<br>
 							<p class="dados">Nome: {{carteira.nome}}</p>
@@ -62,8 +63,8 @@
 						</div>
 					</a>
 				</div>
-				{% endfor %}
-				{% else %}
+			{% endfor %}
+			{% if not carteiras %}
 				<h3 style="padding: 3rem; text-align: center; color: red;">Nenhum usuário cadastrado ainda</h3>
 			{% endif %}
         </div>
