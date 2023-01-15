@@ -6,10 +6,12 @@ class Carteira(models.Model):
     email = models.EmailField(max_length=64, blank=False, null=False)
     cpf = models.IntegerField(blank=False, null=False)
     matricula = models.IntegerField(blank=False, null=False)
-    associacao = models.IntegerField(blank=False, null=False)
+    # para a associacao, irá ser colocado o id da carteirinha
+    # associacao = models.IntegerField(blank=False, null=False)
     data_nasc = models.DateField(blank=False, null=False)
     data_exped = models.DateField(blank=False, null=False)
     data_valid = models.DateField(blank=False, null=False)
+    foto = models.ImageField(upload_to='carteiras', null=True, blank=True)
 
     def __str__(self):
         return self.nome

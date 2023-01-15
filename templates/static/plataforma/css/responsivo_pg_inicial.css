@@ -105,7 +105,21 @@
 	}
 
 	.card-lateral{
-		display: none;
+		text-decoration: none;
+		justify-content: space-around;
+		align-items: center;
+		width: 90%;
+		background-color: #0b3864;
+		margin: 0.5rem auto;
+		padding: 10px;
+		color: white;
+		font-weight: bold;
+		text-decoration: none;
+		text-align: center;
+		box-shadow: 5px 5px 5px gray;
+		font-size: 1rem;
+		display: flex;
+		flex-direction: row;
 	}
 
 	.card-lateral img {
@@ -116,7 +130,9 @@
 
 	.sidebar{
 	    width: 100%;
-	    background-color: transparent;
+	    background-color: white;
+	    margin-top: 12rem;
+		position: absolute;
 	}
 
 	nav img {
@@ -124,23 +140,8 @@
 	}
 
 	.sair-btn {
-		position: absolute;
-		display: none;
 		width: 100%;
 		right: 0rem;
-		bottom: 0rem;
+		top: 95%;
 	}
-
-	.voltar-btn {
-		position: relative;
-		display: block;
-		width: 100%;
-		right: 0rem;
-		bottom: 0rem;
-	}
-
-	.area_cadastrar {
-		position: relative;
-	}
-	
 }

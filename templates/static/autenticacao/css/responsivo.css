@@ -15,7 +15,7 @@
 	.sidebar{
 	    height: 10vh;
 	    width: 100%;
-	    background-color: rgb(12, 21, 118);
+	    background-color: #0b3864;
 	    margin: 0;
 	    padding: 0;
 	    top: 0;
@@ -77,7 +77,7 @@
 	    outline: 0;
 	}
 	.input-form:focus{
-	    border: 2px solid rgb(12, 21, 118) !important;
+	    border: 2px solid #0b3864 !important;
 	    outline: 0 !important;
 	    box-shadow: none !important;
 	}

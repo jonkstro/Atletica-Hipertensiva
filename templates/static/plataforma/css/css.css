@@ -10,7 +10,7 @@ body {
 }
 
 nav {
-    background-color: rgb(12, 21, 118);
+    background-color: #0b3864;
 }
 nav img {
     padding-left: 20rem;
@@ -21,7 +21,7 @@ nav img {
     height: 100%;
     width: 250px;
     position: fixed;
-    background-color: rgb(12, 21, 118);
+    background-color: #0b3864;
     /*margin-top: 50px;*/
     padding: 0;
     top: 0;
@@ -87,7 +87,7 @@ nav img{
     justify-content: center;
     align-items: center;
     width: 220px;
-    background-color: rgb(12, 21, 118);
+    background-color: #104b86;
     margin-top: 15px;
     margin-left: 15px;
     padding: 10px;
@@ -97,14 +97,21 @@ nav img{
     text-align: center;
     box-shadow: 5px 5px 5px gray;
     font-size: 1.5rem;
+    transition: all 0.2s;
+    border-radius: 1rem;
+}
+
+.card-lateral:hover {
+    filter: brightness(0.9);
+    transform: scale(1.1);
 }
 
 .dados{
     font-weight: bold;
 } 
 
-.sair-btn {
-    position: fixed;
+.sair-btn, .voltar-btn {
+    position: absolute;
     top: 1rem;
     right: 1rem;
     margin: 0;
@@ -112,7 +119,20 @@ nav img{
     text-align: center;  
 }
 
+.sair-btn {
+    display: block;
+}
 .sair-btn a {
+    padding: auto;
+    font-size: 1rem;
+    height: 2rem;
+}
+
+.voltar-btn {
+    display: block;
+}
+
+.voltar-btn a {
     padding: auto;
     font-size: 1rem;
     height: 2rem;

@@ -4,7 +4,7 @@
 
 {% block 'head' %}
 <link rel="stylesheet" href="{% static 'plataforma/css/css.css' %}">
-<link rel="stylesheet" href="{% static 'plataforma/css/responsivo_pg_inicial.css' %}">
+<link rel="stylesheet" href="{% static 'plataforma/css/responsivo.css' %}">
 {% endblock %}
 
 {% block 'titulo' %}Atlética Hipertensiva{% endblock %}
@@ -39,17 +39,46 @@
 	        </div>
 		</a>
     </div>
-
     <div class="conteudo">
-    	<h1 style="text-align: center" class="titulo">Selecione o que deseja:</h1>
     	
+        <h1 style="text-align: center"  class="titulo">Escolha o Associado: </h1>
+        <div class="row">
+			{% if carteiras %}
+				{% for carteira in carteiras%}
+				<div class="col-md-4">
+					<a href="{% url 'dados_paciente' paciente.id %}" class="link-hover">
+						<div class="card-paciente">
+							<div class="foto-perfil">
+								{% if carteira.sexo == "M"%}
+									<img src="{% static 'plataforma/img/perfil2.png' %}">
+									{% else %}
+									<img src="{% static 'plataforma/img/perfil1.png' %}">
+								{% endif %}
+							</div>
+							<br>
+							<p class="dados">Nome: {{carteira.nome}}</p>
+							<p class="dados">Mat: {{carteira.matricula}}</p>
+							<p class="dados">Email: {{carteira.email}}</p>
+						</div>
+					</a>
+				</div>
+				{% endfor %}
+				{% else %}
+				<h3 style="padding: 3rem; text-align: center; color: red;">Nenhum usuário cadastrado ainda</h3>
+			{% endif %}
+        </div>
     </div>
       
-	<div class="sair-btn">
+	<div class="voltar-btn">
+        <a style="width: 80%; background-color: #0b3864;" href="{% url 'plataforma' %}" class="btn btn-info navbar-brand">VOLTAR</a>
+	</div>
+    <div class="sair-btn">
 		<a style="width: 80%;" href="{% url 'sair' %}" class="btn btn-danger navbar-brand">SAIR</a>
 	</div>
+    
 
-{% endblock %}
+    {% endblock %}
+    
 
 
-
+    

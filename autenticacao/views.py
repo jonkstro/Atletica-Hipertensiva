@@ -89,7 +89,7 @@ def logar(request):
     # return HttpResponse('Tela de logar')
     if (request.method == 'GET'):
         if (request.user.is_authenticated):
-            return redirect('/')
+            return redirect('/plataforma/')
         return render(request, 'logar.html')
     elif (request.method == 'POST'):
         username = request.POST.get('usuario')
