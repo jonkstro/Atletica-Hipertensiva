@@ -6,6 +6,11 @@ from django.contrib.messages import constants
 
 from plataforma.models import Carteira
 
+from datetime import datetime
+from .utils import qrcode
+
+hoje = datetime.now().date()
+
 # Página inicial do sistema, onde irá listas as opções que podem ser escolhidas pelo usuário
 @login_required(login_url='/auth/')
 def plataforma(request):
@@ -16,7 +21,11 @@ def plataforma(request):
 def dados_associados_listar(request):
     if request.method == "GET":
         carteiras = Carteira.objects.all()
-        return render(request, 'dados_associados_listar.html', {'carteiras': carteiras})
+        return render(request, 'dados_associados_listar.html', {'carteiras': carteiras, 'hoje':hoje})
+    elif request.method == "POST":
+        filtro = request.POST.get('filtro')
+        carteiras = Carteira.objects.filter(nome__contains = filtro)
+        return render(request, 'dados_associados_listar.html', {'carteiras': carteiras, 'hoje':hoje})
 
 # Realizar o cadastro dos associados no sistema
 @login_required(login_url='/auth/')
@@ -28,7 +37,7 @@ def add_associado(request):
         email = request.POST.get('email')
         cpf = request.POST.get('cpf')
         matricula = request.POST.get('matricula')
-        foto = request.POST.get('foto')
+        foto = request.FILES.get('foto')
         data_nasc = request.POST.get('data-nasc')
         data_exped = request.POST.get('data-exped')
         data_valid = request.POST.get('data-valid')
@@ -63,8 +72,16 @@ def add_associado(request):
 
 
 
+# Listar carteirinha
+@login_required(login_url='/auth/')
+def carteirinha (request, matricula):
+    carteirinha = get_object_or_404(Carteira, matricula = matricula)
+    if request.method == "GET":
+        return render(request, 'carteirinha.html', {'carteirinha':carteirinha})
 
 
+        # carteiras = Carteira.objects.all()
+        # return render(request, 'dados_associados_listar.html', {'carteiras': carteiras, 'hoje':hoje})
 
 
 

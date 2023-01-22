@@ -48,18 +48,32 @@
     <div class="conteudo">
     	
         <h1 style="text-align: center"  class="titulo">Escolha o Associado: </h1>
+		<form style="padding: 1rem;" action="{% url 'dados_associados_listar' %}" method="POST">{% csrf_token %}
+            <input style="width: 100%; padding: 0; height: 3rem;" class="form-control input-form" type="text" name="filtro" placeholder="Filtre por nome do associado">
+            <br>
+            <button style="width: 100%; padding: 0; height: 3rem; background-color: #0b3864;" class="btn btn-info text-white">Filtrar</button>
+        </form>
         <div class="row">
 			{% for carteira in carteiras%}
-				<div class="col-md-4">
-					<a href="" class="link-hover">
-						<div class="card-paciente">
-							<div class="foto-perfil">
-								<img src="{{carteira.foto}}">
+				<div class="col-md-5">
+					<a href="{% url 'carteirinha' carteira.matricula %}" class="link-hover">
+						<div class="card-associado">
+							<div class="foto-perfil" style="text-align: center;">
+								<img width="100px" height="100px" src="{{carteira.foto.url}}">
 							</div>
-							<br>
 							<p class="dados">Nome: {{carteira.nome}}</p>
-							<p class="dados">Mat: {{carteira.matricula}}</p>
-							<p class="dados">Email: {{carteira.email}}</p>
+							<p class="dados">Matrícula: {{carteira.matricula}}</p>
+							<p class="dados">Validade: {{carteira.data_valid}}</p>
+							{% if hoje > carteira.data_valid %}
+								<div style="display: flex; flex-direction: row;">
+									<p class="dados">Status: </p><p style="color: rgb(169, 7, 7); font-weight: 600"> Inadimplente</p>
+								</div>
+							{% else %}
+								<div style="display: flex; flex-direction: row;">
+									<p class="dados">Status: </p><p style="color: rgb(7, 141, 40); font-weight: 600"> Em dias</p>
+								</div>
+							{% endif %}
+							
 						</div>
 					</a>
 				</div>

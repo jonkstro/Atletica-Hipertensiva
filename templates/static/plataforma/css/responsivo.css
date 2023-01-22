@@ -142,5 +142,157 @@
 	.area_cadastrar {
 		position: relative;
 	}
+
+
+
+
+
+
+
+.div-carteira {
+    margin-top: 10rem;
+    text-align: left;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+	transform: rotate(90deg);
+	width: 30rem;
+	height: 30rem;
+}
+
+.div-carteira .carteirinha-img {
+	max-width: 100%;
+	margin-left: 0rem;
+	position: fixed;
+    bottom: 3rem;
+    left: 0rem;
 	
+}
+.div-carteira h5 {
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-align: left;
+    margin-bottom: 0;
+    padding: 0 0.5rem;
+}
+.div-carteira p {
+	font-size: 0.8rem;
+    text-align: left;
+    padding: 0 0.5rem;
+}
+
+.div-carteira-nome {
+    position: fixed;
+    top: 17rem;
+    left: 7rem;
+    color: black;
+    width: 13rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+	
+}
+
+.div-carteira-cpf {
+    position: fixed;
+    top: 19.5rem;
+    left: 7rem;
+    color: black;
+    width: 7rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+	
+}
+
+.div-carteira-matricula {
+    position: fixed;
+    top: 19.5rem;
+    left: 14.1REM;
+    color: black;
+    width: 6rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+	
+}
+
+.div-carteira-associacao {
+    position: fixed;
+    top: 22rem;
+    left: 7rem;
+    color: black;
+    width: 7rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+	
+}
+
+.div-carteira-dataNasc {
+    position: fixed;
+    top: 22rem;
+    left: 14.1REM;
+    color: black;
+    width: 6rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+	
+}
+
+.div-carteira-dataExped {
+    position: fixed;
+    top: 24.5rem;
+    left: 7rem;
+    color: black;
+    width: 7rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+	
+}
+
+.div-carteira-dataValid {
+    position: fixed;
+    top: 24.5REM;
+    left: 14.1REM;
+    color: black;
+    width: 6rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+	
+}
+
+.div-carteira-perfil {
+    position: fixed;
+    top: 17rem;
+    left: 1rem;
+    color: black;
+    width: 85px;
+    height: 100px;
+    border-radius: 0.5rem;
+	background-color: transparent;
+	
+}
+.div-carteira-perfil img {
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5rem;
+	transform: rotate(0deg);
+	margin-left: 0;
+}
+
+.div-carteira-qrcode {
+    position: fixed;
+    top: 17rem;
+    left: 20.5rem;
+    color: black;
+    width: 120px;
+    height: 120px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0;
+	
+}
 }

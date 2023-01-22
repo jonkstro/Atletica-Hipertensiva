@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'plataforma/css/css.css' %}">
+<link rel="stylesheet" href="{% static 'plataforma/css/responsivo.css' %}">
+{% endblock %}
+
+{% block 'titulo' %}Atlética Hipertensiva{% endblock %}
+
+{% block 'body' %}
+	{% if messages %}
+		{% for message in messages %}
+		<div class="alert {{message.tags}}">
+		{{message}}
+		</div>
+		{% endfor %}
+	{% endif %}
+
+	<!-- sidebar -->
+	<div class="sidebar">
+		<a style="text-decoration: none" href="{% url 'plataforma' %}">	
+	        <div  class="card-lateral">
+	            <img src="{% static 'plataforma/img/dados-projeto.png' %}">
+	                    <br>
+	                    <br>
+	                    <p>Gerar Relatórios</p>
+	        </div>
+		</a>
+		<a style="text-decoration: none;" href="{% url 'dados_associados_listar' %}">	
+	        <div class="card-lateral">
+	            <img src="{% static 'plataforma/img/dispositivos.png' %}">
+	                    <br>
+	                    <br>
+	                    <p>Gerenciar Associados</p>
+	        </div>
+		</a>
+		<a style="text-decoration: none" href="{% url 'add_associado' %}">
+	        <div  class="card-lateral">
+	            <img src="{% static 'plataforma/img/dados-usuario.png' %}">
+	                    <br>
+	                    <br>
+	                    <p>Adicionar Associado</p>
+	        </div>
+		</a>
+    </div>
+    <div class="conteudo">
+<!--     	
+        <h1 style="text-align: center"  class="titulo">Escolha o Associado: </h1>
+		<form style="padding: 1rem;" action="{% url 'dados_associados_listar' %}" method="POST">{% csrf_token %}
+            <input style="width: 100%; padding: 0; height: 3rem;" class="form-control input-form" type="text" name="filtro" placeholder="Filtre por nome do associado">
+            <br>
+            <button style="width: 100%; padding: 0; height: 3rem; background-color: #0b3864;" class="btn btn-info text-white">Filtrar</button>
+        </form>
+        <div class="row">
+			{% for carteira in carteiras%}
+				<div class="col-md-5">
+					<a href="" class="link-hover">
+						<div class="card-associado">
+							<div class="foto-perfil" style="text-align: center;">
+								<img width="100px" height="100px" src="{{carteira.foto.url}}">
+							</div>
+							<p class="dados">Nome: {{carteira.nome}}</p>
+							<p class="dados">Mat: {{carteira.matricula}}</p>
+							<p class="dados">Email: {{carteira.email}}</p>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+			{% if not carteiras %}
+				<h3 style="padding: 3rem; text-align: center; color: red;">Nenhum usuário cadastrado ainda</h3>
+			{% endif %}
+        </div> -->
+    </div>
+      
+	<div class="voltar-btn">
+        <a style="width: 80%; background-color: #0b3864;" href="{% url 'plataforma' %}" class="btn btn-info navbar-brand">VOLTAR</a>
+	</div>
+    <div class="sair-btn">
+		<a style="width: 80%;" href="{% url 'sair' %}" class="btn btn-danger navbar-brand">SAIR</a>
+	</div>
+    
+
+    {% endblock %}
+    
+
+
+    

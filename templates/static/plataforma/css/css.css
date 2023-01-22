@@ -95,7 +95,7 @@ nav img{
     font-weight: bold;
     text-decoration: none;
     text-align: center;
-    box-shadow: 5px 5px 5px gray;
+    box-shadow: 1px 1px 1px gray;
     font-size: 1.5rem;
     transition: all 0.2s;
     border-radius: 1rem;
@@ -103,7 +103,7 @@ nav img{
 
 .card-lateral:hover {
     filter: brightness(0.9);
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
 }
 
 .dados{
@@ -136,4 +136,159 @@ nav img{
     padding: auto;
     font-size: 1rem;
     height: 2rem;
+}
+
+.card-associado {
+    text-decoration: none;
+    border-style: solid; 
+    border-radius: 1rem;
+    margin: 1rem; 
+    padding: 1rem; 
+    text-align: left;
+    color: #0b3864;
+    transition: all 0.2s;
+    box-shadow: 1px 1px 1px gray;
+}
+
+.card-associado:hover {
+    transform: scale(1.1);
+}
+
+
+.card-associado p {
+    text-decoration: none;
+    margin: 0;
+}
+
+.card-associado a {
+    text-decoration: none;
+}
+
+.div-carteira {
+    max-width: 860px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    text-align: center;
+    position: fixed;
+    top: 5rem;
+    left: 18rem;
+}
+
+.div-carteira img {
+    max-width: 100%;
+}
+.div-carteira h5 {
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 0;
+    padding: 0 0.5rem;
+}
+.div-carteira p {
+    text-align: left;
+    padding: 0 0.5rem;
+}
+
+.div-carteira-nome {
+    position: fixed;
+    top: 12rem;
+    left: 32rem;
+    color: black;
+    width: 21rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+}
+
+.div-carteira-cpf {
+    position: fixed;
+    top: 16rem;
+    left: 32rem;
+    color: black;
+    width: 10rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+}
+
+.div-carteira-matricula {
+    position: fixed;
+    top: 16rem;
+    left: 43rem;
+    color: black;
+    width: 10rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+}
+
+.div-carteira-associacao {
+    position: fixed;
+    top: 20rem;
+    left: 32rem;
+    color: black;
+    width: 10rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+}
+
+.div-carteira-dataNasc {
+    position: fixed;
+    top: 20rem;
+    left: 43rem;
+    color: black;
+    width: 10rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+}
+
+.div-carteira-dataExped {
+    position: fixed;
+    top: 24rem;
+    left: 32rem;
+    color: black;
+    width: 10rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+}
+
+.div-carteira-dataValid {
+    position: fixed;
+    top: 24rem;
+    left: 43rem;
+    color: black;
+    width: 10rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+}
+
+.div-carteira-perfil {
+    position: fixed;
+    top: 12rem;
+    left: 20rem;
+    color: black;
+    width: 10.2rem;
+    height: 12.5rem;
+    border-radius: 0.5rem;
+}
+.div-carteira-perfil img {
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.div-carteira-qrcode {
+    position: fixed;
+    top: 12rem;
+    left: 54rem;
+    color: black;
+    width: 15.25rem;
+    height: 15.5rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0;
 }

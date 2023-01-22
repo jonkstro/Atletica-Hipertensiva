@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load qr_code %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'plataforma/css/css.css' %}">
+<link rel="stylesheet" href="{% static 'plataforma/css/responsivo.css' %}">
+{% endblock %}
+
+{% block 'titulo' %}Atlética Hipertensiva{% endblock %}
+
+{% block 'body' %}
+
+	<!-- sidebar -->
+	<div class="sidebar">
+		<a style="text-decoration: none" href="{% url 'plataforma' %}">	
+	        <div  class="card-lateral">
+	            <img src="{% static 'plataforma/img/dados-projeto.png' %}">
+	                    <br>
+	                    <br>
+	                    <p>Gerar Relatórios</p>
+	        </div>
+		</a>
+		<a style="text-decoration: none;" href="{% url 'dados_associados_listar' %}">	
+	        <div class="card-lateral">
+	            <img src="{% static 'plataforma/img/dispositivos.png' %}">
+	                    <br>
+	                    <br>
+	                    <p>Gerenciar Associados</p>
+	        </div>
+		</a>
+		<a style="text-decoration: none" href="{% url 'add_associado' %}">
+	        <div  class="card-lateral">
+	            <img src="{% static 'plataforma/img/dados-usuario.png' %}">
+	                    <br>
+	                    <br>
+	                    <p>Adicionar Associado</p>
+	        </div>
+		</a>
+    </div>
+    <div class="conteudo">
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert {{message.tags}}">
+            {{message}}
+            </div>
+            {% endfor %}
+        {% endif %}
+        <div class="div-carteira">
+            <img class="carteirinha-img" src="{% static 'plataforma/img/carteira-atletica.png' %}" alt="">
+            <div class="div-carteira-perfil">
+                <img src="{{carteirinha.foto.url}}" alt="foto de perfil">
+            </div>
+            <div class="div-carteira-nome">
+                <h5>NOME: </h5>
+                <p>{{carteirinha.nome}}</p>
+            </div>
+            <div class="div-carteira-cpf">
+                <h5>CPF: </h5>
+                <p>{{carteirinha.cpf}}</p>
+            </div>
+            <div class="div-carteira-matricula">
+                <h5>MATRÍCULA: </h5>
+                <p>{{carteirinha.matricula}}</p>
+            </div>
+            <div class="div-carteira-associacao">
+                <h5>ASSOCIAÇÃO: </h5>
+                <p>{{carteirinha.id}}</p>
+            </div>
+            <div class="div-carteira-dataNasc">
+                <h5>DT NASC.: </h5>
+                <p>{{carteirinha.data_nasc|date:"d/m/Y"}}</p>
+            </div>
+            <div class="div-carteira-dataExped">
+                <h5>EXPEDIÇÃO: </h5>
+                <p>{{carteirinha.data_exped|date:"d/m/Y"}}</p>
+            </div>
+            <div class="div-carteira-dataValid">
+                <h5>VALIDADE: </h5>
+                <p>{{carteirinha.data_valid|date:"d/m/Y"}}</p>
+            </div>
+            <div class="div-carteira-qrcode">
+                {% qr_from_text "http://127.0.0.1:8000/carteirinha/"|add:carteirinha.matricula size="m" image_format="png" error_correction="L" %}
+            </div>
+        </div>
+
+
+
+
+    </div>
+      
+	<div class="voltar-btn">
+        <a style="width: 80%; background-color: #0b3864;" href="{% url 'plataforma' %}" class="btn btn-info navbar-brand">VOLTAR</a>
+	</div>
+    <div class="sair-btn">
+		<a style="width: 80%;" href="{% url 'sair' %}" class="btn btn-danger navbar-brand">SAIR</a>
+	</div>
+    
+
+    {% endblock %}
+    
+
+
+    
