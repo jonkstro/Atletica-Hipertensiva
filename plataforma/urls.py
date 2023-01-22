@@ -6,6 +6,7 @@ urlpatterns = [
     path('dados-associados/', views.dados_associados_listar, name="dados_associados_listar"),
     path('add-associado/', views.add_associado, name='add_associado'),
     path('carteirinha/<str:matricula>/', views.carteirinha, name='carteirinha'),
+    path('buscar-carteirinha/', views.buscar_carteirinha, name='buscar_carteirinha'),
 
 
 
