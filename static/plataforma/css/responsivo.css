@@ -1,0 +1,298 @@
+/*========== RESOLUÇÕES RESPONSIVIDADE ==========*/
+
+/*telas menores*/
+@media (max-width: 620px) {
+	body {
+	    margin: 0;
+	    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	    font-size: 1rem;
+	    font-weight: 400;
+	    line-height: 1.5;
+	    color: #212529;
+	    text-align: left;
+	}
+
+	.logo{
+		width: 100%;
+		margin-top: 0;
+		display: inline-flex;
+	    justify-content: start;
+	    align-items: start;
+	    text-align: right;
+	}
+
+	.logo img{
+	    max-width: 60px;
+	}
+
+	.conteudo{
+		padding: 5px;
+	    margin-left: 0;
+	    margin-top: 0px;
+	    width: 100%;
+		font-size: 1rem;
+	}
+
+	.area-cadastrar{
+		padding: 10px;
+	    margin-top: 80px;
+	    margin-left: 0px;
+	}
+
+	.area-logar{
+	    padding: 10px;
+	    margin-top: 80px;
+	    margin-left: 0px;
+	}
+
+
+	.titulo{
+	    font-size: 32px;
+	    font-weight: bold;
+	}
+	.sub-titulo{
+	    color: gray;
+	}
+	.texto-logo{
+		width: 100%;
+		text-align: center;
+	    margin-top: 15px;
+	    color: #fff;
+	    font-weight: bold;
+	    font-size: 22px;
+	}
+
+	.input-form{
+	    margin-top: 0;
+	    width: 100%;
+	    padding: 5px;
+	    outline: 0;
+	}
+	.input-form:focus{
+	    border: 2px solid #0b3864 !important;
+	    outline: 0 !important;
+	    box-shadow: none !important;
+	}
+
+	.bold{
+	    font-weight: bold;
+	}
+
+	.btn{
+	    height: 30px;
+	    text-decoration: none;
+	    margin-top: 0;
+	    border-width: 1px;
+	    border-radius: 5px;
+	    padding: 0px 15px 0px 15px;
+	    font-size: 15px;
+	}
+
+	.row{
+	    justify-content: space-around;
+	    padding: 0;
+	    margin: 0;
+	}
+
+	.form-row span{
+	    width: 50%;
+	    padding: 0px 5px 0px 5px;
+	    justify-content: start;
+	}
+
+	.btn:hover {
+	    transition: 0.5s ease-in-out;
+	}
+
+	.card-lateral{
+		display: none;
+	}
+
+	.card-lateral img {
+		width: 25px;
+		height: 25px;
+	}
+
+
+	.sidebar{
+	    width: 100%;
+	    background-color: transparent;
+	}
+
+	nav img {
+		padding-left: 1rem;
+	}
+
+	.sair-btn {
+		position: absolute;
+		display: none;
+		width: 100%;
+		right: 0rem;
+		bottom: 0rem;
+	}
+
+	.voltar-btn {
+		position: relative;
+		display: block;
+		width: 100%;
+		right: 0rem;
+		bottom: 0rem;
+	}
+
+	.area_cadastrar {
+		position: relative;
+	}
+
+
+
+
+
+
+
+.div-carteira {
+    margin-top: 10rem;
+    text-align: left;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+	transform: rotate(90deg);
+	width: 30rem;
+	height: 30rem;
+}
+
+.div-carteira .carteirinha-img {
+	max-width: 100%;
+	margin-left: 0rem;
+	position: fixed;
+    bottom: 3rem;
+    left: 0rem;
+	
+}
+.div-carteira h5 {
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-align: left;
+    margin-bottom: 0;
+    padding: 0 0.5rem;
+}
+.div-carteira p {
+	font-size: 0.8rem;
+    text-align: left;
+    padding: 0 0.5rem;
+}
+
+.div-carteira-nome {
+    position: fixed;
+    top: 17rem;
+    left: 7rem;
+    color: black;
+    width: 13rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+	
+}
+
+.div-carteira-cpf {
+    position: fixed;
+    top: 19.5rem;
+    left: 7rem;
+    color: black;
+    width: 7rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+	
+}
+
+.div-carteira-matricula {
+    position: fixed;
+    top: 19.5rem;
+    left: 14.1REM;
+    color: black;
+    width: 6rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+	
+}
+
+.div-carteira-associacao {
+    position: fixed;
+    top: 22rem;
+    left: 7rem;
+    color: black;
+    width: 7rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+	
+}
+
+.div-carteira-dataNasc {
+    position: fixed;
+    top: 22rem;
+    left: 14.1REM;
+    color: black;
+    width: 6rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+	
+}
+
+.div-carteira-dataExped {
+    position: fixed;
+    top: 24.5rem;
+    left: 7rem;
+    color: black;
+    width: 7rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+	
+}
+
+.div-carteira-dataValid {
+    position: fixed;
+    top: 24.5REM;
+    left: 14.1REM;
+    color: black;
+    width: 6rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+	
+}
+
+.div-carteira-perfil {
+    position: fixed;
+    top: 17rem;
+    left: 1rem;
+    color: black;
+    width: 85px;
+    height: 100px;
+    border-radius: 0.5rem;
+	background-color: transparent;
+	
+}
+.div-carteira-perfil img {
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5rem;
+	transform: rotate(0deg);
+	margin-left: 0;
+}
+
+.div-carteira-qrcode {
+    position: fixed;
+    top: 17rem;
+    left: 20.5rem;
+    color: black;
+    width: 120px;
+    height: 120px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0;
+	
+}
+}
