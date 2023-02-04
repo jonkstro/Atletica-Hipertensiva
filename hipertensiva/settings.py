@@ -29,6 +29,7 @@ SECRET_KEY = 'django-insecure-!=j@4@d)8cbg#36=82hm5t&*1_f_-_1jbg1vhr$6&2fz2w&j5#
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://hipertensiva.up.railway.app']
 
 
 # Application definition
