@@ -28,7 +28,7 @@
     	
         <h1 style="text-align: center"  class="titulo">Gerar Carteirinha: </h1>
 		<form style="padding: 1rem;" action="{% url 'buscar_carteirinha' %}" method="POST">{% csrf_token %}
-            <input style="width: 100%; padding: 0; height: 3rem;" class="form-control input-form" type="text" name="matricula" placeholder="Digite sua matrícula">
+            <input style="width: 100%; padding: 0; height: 3rem;" class="form-control input-form" type="number" name="matricula" placeholder="Digite sua matrícula">
             <br>
             <button style="width: 100%; padding: 0; height: 3rem; background-color: #0b3864;" class="btn btn-info text-white">Filtrar</button>
         </form>

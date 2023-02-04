@@ -121,13 +121,33 @@ nav img{
 .sair-btn, .voltar-btn {
     position: absolute;
     top: 1rem;
-    right: 10rem;
+    right: 20rem;
     margin: 0;
-    width: 15%;
+    width: 10rem;
     text-align: center;  
 }
 
-.voltar-btn {
+.pdf-btn {
+    position: absolute;
+    top: 1rem;
+    right: 10rem;
+    margin: 0;
+    width: 10rem;
+    text-align: center; 
+}
+
+@media (max-width: 620px) {
+    .pdf-btn {
+        position: absolute;
+        top: 600px;
+        right: 0rem;
+        margin: 0;
+        width: 15%;
+        text-align: center; 
+    }
+}
+
+.voltar-btn, .pdf-btn {
     display: block;
 }
 
@@ -136,7 +156,11 @@ nav img{
     font-size: 1rem;
     height: 2rem;
 }
-
+.pdf-btn a {
+    padding: auto;
+    font-size: 1rem;
+    height: 2rem;
+}
 .card-associado {
     text-decoration: none;
     border-style: solid; 
@@ -292,6 +316,20 @@ nav img{
     border-radius: 0;
 }
 
+
+.status {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    bottom: 5rem;
+    font-size: 3em;
+    justify-content: center;
+}
+
+
+
 /*========== RESOLUÇÕES RESPONSIVIDADE ==========*/
 
 /*telas menores*/
@@ -414,12 +452,12 @@ nav img{
 	}
 
 	nav img {
-		padding-left: 1rem;
+		padding-left: 0rem;
 	}
 
 
 
-	.voltar-btn {
+	.voltar-btn, .pdf-btn {
 		position: relative;
 		display: block;
 		width: 100%;
@@ -430,6 +468,8 @@ nav img{
 	.area_cadastrar {
 		position: relative;
 	}
+
+    
 
 
 
@@ -583,12 +623,24 @@ nav img{
     border-radius: 0;
 	
 }
+
+.status {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    top: 8rem;
+    font-size: 2rem;
+    justify-content: center;
+}
 }
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+
 
 {% endblock %}
 
@@ -655,26 +707,51 @@ nav img{
     <div class="voltar-btn">
         <a style="width: 80%; background-color: #0b3864;" href="{% url 'buscar_carteirinha' %}" class="btn btn-info navbar-brand">VOLTAR</a>
 	</div>
-<!--       
-	<div class="voltar-btn">
-        <button onclick="CreatePDFfromHTML();" style="height: 2.5rem;width: 80%; background-color: #0b3864;" href="{% url 'plataforma' %}" class="btn btn-info navbar-brand">Gerar PDF</button>
-	</div> -->
+    {% if hoje > carteirinha.data_valid %}
+        <div class="status">
+            <p class="dados">Status: </p><p style="color: rgb(169, 7, 7); font-weight: 600;"> Inadimplente</p>
+        </div>
+    {% else %}
+        <div class="status">
+            <p class="dados">Status: </p><p style="color: rgb(7, 141, 40); font-weight: 600"> Ativo</p>
+        </div>
+    {% endif %}
 
-    <!-- <script>
+          
+	<div class="pdf-btn">
+        <button onclick="downloadPDF();" style="height: 2.5rem;width: 80%; background-color: rgb(7, 141, 40);" href="{% url 'plataforma' %}" class="btn btn-info navbar-brand">Gerar PDF</button>
+	</div>
 
-        window.jsPDF = window.jspdf.jsPDF;
-        function CreatePDFfromHTML() {
-            var doc = new jsPDF();
-            specialElementHandlers()
-            doc.fromHTML("<body>", 1500, 1500, {
-                    'width':17000,
-                    'elementHandlers': specialElementHandlers
-            });
-            doc.save('carteira.pdf');
+
+    <script>
+        
+        // function downloadPDF() {
+        // html2canvas(document.getElementById('carteira')).then(function(canvas) {
+        //     var imgData = canvas.toDataURL('image/png');
+        //     var pdf = new jsPDF();
+        //     pdf.addImage(imgData, 'PNG', 0, 0);
+        //     pdf.save("page.pdf");
+        // });
+        // }
+
+        function downloadPDF() {
+        var originalBodyOverflow = document.getElementById('carteira').style.overflow;
+        document.body.style.overflow = "scroll";
+
+        html2canvas(document.getElementById('carteira'), {
+            onrendered: function(canvas) {
+            document.body.style.overflow = originalBodyOverflow;
+
+            var imgData = canvas.toDataURL('image/png');
+            var pdf = new jsPDF({orientation: 'landscape',format: 'letter'});
+            pdf.addImage(imgData, 'PNG', 0, 0, 297, 140);
+            pdf.save("page.pdf");
+            }
+        });
         }
-    </script>
-     -->
+        var pdf = new jsPDF('l', 'mm', 'a4');
 
+    </script>
     {% endblock %}
     
 

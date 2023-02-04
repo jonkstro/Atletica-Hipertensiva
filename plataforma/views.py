@@ -82,13 +82,22 @@ def carteirinha (request, matricula):
     if request.method == "GET":
         return render(request, 'carteirinha.html', {'carteirinha':carteirinha})
 
-
+# Buscar carteirinhas por Matrícula
 def buscar_carteirinha (request):
     if request.method == "GET":
         return render(request, 'buscar_carteirinha.html')
     elif request.method == "POST":
-        matricula = request.POST.get('matricula')
-        carteirinha = get_object_or_404(Carteira, matricula = matricula)
-        # pdf = render_to_pdf('pdf_carteirinha.html', {'carteirinha':carteirinha})
-        # return HttpResponse(pdf, content_type='application/pdf')
-        return render(request, 'pdf_carteirinha.html', {'carteirinha':carteirinha})
+        try:
+            matricula = request.POST.get('matricula')
+            carteirinha = get_object_or_404(Carteira, matricula = matricula)
+            # pdf = render_to_pdf('pdf_carteirinha.html', {'carteirinha':carteirinha})
+            # return HttpResponse(pdf, content_type='application/pdf')
+            return render(request, 'pdf_carteirinha.html', {'carteirinha':carteirinha, 'hoje':hoje})
+        except:
+            messages.add_message(request, constants.ERROR, 'Matrícula não localizada no sistema')
+            return redirect('/buscar-carteirinha/')
+
+
+def gerar_relatorios (request):
+    if request.method == "GET":
+        return render(request, 'relatorios.html')
