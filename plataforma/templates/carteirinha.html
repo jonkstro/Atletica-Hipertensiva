@@ -81,7 +81,7 @@
                 <p>{{carteirinha.data_valid|date:"d/m/Y"}}</p>
             </div>
             <div class="div-carteira-qrcode">
-                {% qr_from_text "https://hipertensiva.up.railway.app/buscar-carteirinhas/"|add:carteirinha.matricula size="m" image_format="png" error_correction="L" %}
+                {% qr_from_text "https://hipertensiva.up.railway.app/buscar-carteirinha/"|add:carteirinha.matricula size="m" image_format="png" error_correction="L" %}
             </div>
         </div>
 
