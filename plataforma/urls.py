@@ -7,7 +7,7 @@ urlpatterns = [
     path('add-associado/', views.add_associado, name='add_associado'),
     path('carteirinha/<str:matricula>/', views.carteirinha, name='carteirinha'),
     path('buscar-carteirinha/', views.buscar_carteirinha, name='buscar_carteirinha'),
-    # path('buscar-carteirinhas/<str:matricula>/', views.pdf_carteirinha, name='carteirinha_pdf_mat'),    
+    path('buscar-qrcode/<str:matricula>/', views.pdf_carteirinha, name='pdf_carteirinha'),    
     path('relatorios/', views.gerar_relatorios, name='gerar_relatorios')
 
 
