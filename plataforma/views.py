@@ -99,6 +99,17 @@ def buscar_carteirinha (request):
             messages.add_message(request, constants.ERROR, 'Matrícula não localizada no sistema')
             return redirect('/buscar-carteirinha/')
 
+def pdf_carteirinha (request, matricula):
+    if request.method == "GET":
+        try:
+            carteirinha = get_object_or_404(Carteira, matricula=matricula)
+            return render (request, 'pdf_carteirinha.html', {'carteirinha':carteirinha, 'hoje':hoje})
+        except:
+            messages.add_message(request, constants.ERROR, 'Matrícula não localizada no sistema')
+            return redirect('/buscar-carteirinha/')
+
+
+
 
 def gerar_relatorios (request):
     if request.method == "GET":
