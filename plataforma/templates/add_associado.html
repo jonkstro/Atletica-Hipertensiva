@@ -11,6 +11,37 @@
 
 {% block 'body' %}
 
+    <script src=”jquery-1.2.6.js” type=”text/javascript”></script>
+    <script src=”jquery.maskedinput-1.1.3″ type=”text/javascript”></script>
+    <script>
+        const input = document.getElementById('#inputCPF')
+
+        input.addEventListener('keypress', () => {
+            let inputLength = input.value.length
+
+            // MAX LENGHT 14  CPF
+            if (inputLength == 3 || inputLength == 7) {
+                input.value += '.'
+            }else if (inputLength == 11) {
+                input.value += '-'
+            }
+
+
+            // MAX LENGHT 12  RG
+            // if (inputLength == 2 || inputLength == 6) {
+            //     input.value += '.'
+            // }else if (inputLength == 10) {
+            //     input.value += '-'
+            // }
+
+            // // MAX LENGHT 19 CARTÃO
+            // if (inputLength == 4 || inputLength == 9 || inputLength == 14) {
+            //     input.value += ' '
+            // }
+
+        })
+    </script>
+
 	<!-- sidebar -->
 	<div class="sidebar">
 		<a style="text-decoration: none" href="{% url 'gerar_relatorios' %}">	
@@ -57,10 +88,27 @@
                     <input class="form-control input-form" name="email" type="email" placeholder="Digite o email do associado">
                     <br>
                     <span class="bold">CPF</span>
-                    <input class="form-control input-form" name="cpf" type="number" placeholder="Digite o cpf do associado">
+
+                    
+                    <script>
+                        // FUNÇÃO PARA CRIAR MÁSCARA DE CPF:
+
+                        function mascara_cpf(){
+                            var cpf = document.getElementById('inpCPF');
+                            if(cpf.value.length === 3 || cpf.value.length === 7) {
+                                cpf.value += '.';
+                            } else if(cpf.value.length == 11){
+                                cpf.value += '-';
+                            }
+                        }
+                    </script>                  
+                    <input class="form-control input-form" id="inpCPF" name="cpf" type="text" autocomplete="off" maxlength="14" onkeyup="mascara_cpf()" placeholder="Digite o cpf do associado">
                     <br>
                     <span class="bold">Matrícula</span>
                     <input class="form-control input-form" name="matricula" type="number" placeholder="Digite o número da matrícula do associado">
+                    <br>
+                    <span class="bold">Associação</span>
+                    <input class="form-control input-form" name="associacao" type="text" placeholder="Digite o número da associação">
                     <br>
                     <span class="bold">Data de Nascimento</span>
                     <input class="form-control input-form" name="data-nasc" type="date" placeholder="Digite a data de nascimento do associado">
@@ -79,10 +127,6 @@
                 </form>
             </div>
         </div>
-
-
-
-
     </div>
       
 	<div class="voltar-btn">

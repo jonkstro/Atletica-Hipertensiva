@@ -29,7 +29,6 @@ SECRET_KEY = 'django-insecure-!=j@4@d)8cbg#36=82hm5t&*1_f_-_1jbg1vhr$6&2fz2w&j5#
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://hipertensiva.up.railway.app']
 
 
 # Application definition
@@ -135,10 +134,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-# STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)
-# STATIC_ROOT = os.path.join('static')
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)
+STATIC_ROOT = os.path.join('static')
 
 
 # WHITENOISE
@@ -174,3 +173,8 @@ EMAIL_HOST_USER = 'djangophb@gmail.com'
 EMAIL_HOST_PASSWORD = 'dnrwtgwhdmjyjpgb'
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+CSRF_TRUSTED_ORIGINS = ['https://hipertensiva.up.railway.app']
+

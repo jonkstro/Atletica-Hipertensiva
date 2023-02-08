@@ -66,7 +66,7 @@
             </div>
             <div class="div-carteira-associacao">
                 <h5>ASSOCIAÇÃO: </h5>
-                <p>{{carteirinha.id}}</p>
+                <p>{{carteirinha.associacao}}</p>
             </div>
             <div class="div-carteira-dataNasc">
                 <h5>DT NASC.: </h5>
@@ -81,7 +81,7 @@
                 <p>{{carteirinha.data_valid|date:"d/m/Y"}}</p>
             </div>
             <div class="div-carteira-qrcode">
-                {% qr_from_text "http://127.0.0.1:8000/carteirinha/"|add:carteirinha.matricula size="m" image_format="png" error_correction="L" %}
+                {% qr_from_text "https://hipertensiva.up.railway.app/carteirinha/"|add:carteirinha.matricula size="m" image_format="png" error_correction="L" %}
             </div>
         </div>
 

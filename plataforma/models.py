@@ -6,8 +6,7 @@ class Carteira(models.Model):
     email = models.EmailField(max_length=64, blank=False, null=False)
     cpf = models.CharField(max_length=20, blank=False, null=False)
     matricula = models.CharField(max_length=20, blank=False, null=False)
-    # para a associacao, irá ser colocado o id da carteirinha
-    # associacao = models.IntegerField(blank=False, null=False)
+    associacao = models.CharField(max_length=20, blank=False, null=False)
     data_nasc = models.DateField(blank=False, null=False)
     data_exped = models.DateField(blank=False, null=False)
     data_valid = models.DateField(blank=False, null=False)
